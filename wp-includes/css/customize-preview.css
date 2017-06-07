@@ -29,12 +29,6 @@
 	z-index: 5;
 }
 
-.widget .customize-partial-edit-shortcut button:active,
-.customize-partial-edit-shortcut button:active {
-	padding: 3px;
-	border: 1px solid #0085ba;
-}
-
 /**
  * Styles for the actual shortcut
  *
@@ -50,10 +44,10 @@
 	height: 30px;
 	min-width: 30px;
 	min-height: 30px;
+	line-height: 1em !important;
 	font-size: 18px;
 	z-index: 5;
-	background-color: #0085ba;
-	background: #0085ba;
+	background: #0085ba !important;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
 	border: 2px solid #fff;
@@ -61,6 +55,8 @@
 	box-shadow: 0 2px 1px rgba(46,68,83,0.15);
 	text-align: center;
 	cursor: pointer;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 3px;
 	-webkit-animation-fill-mode: both;
@@ -74,6 +70,9 @@
 	             0 1px 1px #006799,
 	             -1px 0 1px #006799;
 }
+.wp-custom-header .customize-partial-edit-shortcut button {
+	left: 2px
+}
 
 .customize-partial-edit-shortcut button svg {
 	fill: #fff;
@@ -84,10 +83,13 @@
 	margin: auto;
 }
 
-.customize-partial-edit-shortcut button:hover,
+.customize-partial-edit-shortcut button:hover {
+	background: #008ec2 !important; /* matches primary buttons */
+}
+
 .customize-partial-edit-shortcut button:focus {
-    background: #008ec2; /* matches primary buttons */
-	border-color: #191e23; /* provides visual focus style with 4.5 contrast against background color */
+	-webkit-box-shadow: 0 0 0 2px #008ec2;
+	box-shadow: 0 0 0 2px #008ec2;
 }
 
 body.customize-partial-edit-shortcuts-shown .customize-partial-edit-shortcut button {
@@ -250,14 +252,6 @@ body.customize-partial-edit-shortcuts-hidden .customize-partial-edit-shortcut bu
 }
 
 @media screen and (max-width:320px) {
-	.site-title {
-		padding-left: 10px;
-	}
-
-	.widget-area .widget {
-		padding-left: 10px;
-	}
-
 	.widget .customize-partial-edit-shortcut button,
 	.customize-partial-edit-shortcut button {
 		left: -30px;
